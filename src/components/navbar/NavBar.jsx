@@ -3,8 +3,9 @@ import logo from '../../images/logo.svg';
 import './NavBar.css';
 import CommonItem from '../navbar-common-item/CommonItem';
 import DropdownItem from '../navbar-dropdown-item/DropdownItem';
+import CartWidget from '../cart-widget/CartWidget';
 
-const NavBar = () => {
+const NavBar= () => {
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,6 +26,7 @@ const NavBar = () => {
                         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
+                    <CartWidget />
                     </div>
                 </div>
             </nav>
