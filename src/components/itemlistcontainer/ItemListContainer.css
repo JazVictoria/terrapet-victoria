@@ -1,9 +1,3 @@
-.greetingContainer {
-    justify-content: center;
-    display: flex;
-    margin-top: 10rem;
-}
-
-.greeting{
-    color: white;
+.itemListContainer {
+    margin: 5rem 8rem;
 }
