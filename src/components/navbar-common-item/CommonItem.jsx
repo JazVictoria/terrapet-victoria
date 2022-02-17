@@ -3,8 +3,8 @@ import './CommonItem.css';
 
 const CommonItem = ({ itemName }) => {
     return (
-        <li class="nav-item">
-            <a class="nav-link" href="#">{itemName}</a>
+        <li className="nav-item">
+            <a className="nav-link" href="#">{itemName}</a>
         </li>
     )
 }

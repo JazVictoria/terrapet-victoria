@@ -16,7 +16,7 @@ const Item = ({ stockAmount, title, description, price, pictureUrl }) => {
     }
 
     return (
-        <div class="col">
+        <div className="col">
             <div className="card h-100">
                 <img src={pictureUrl} className="card-img-top" alt="..."/>
                 <div className="card-body">
@@ -25,7 +25,7 @@ const Item = ({ stockAmount, title, description, price, pictureUrl }) => {
                     <p className="card-text">${price}</p>
                     <p className="card-text">Stock disponible: {stock}</p>
                 </div>
-                <div class="card-footer">
+                <div className="card-footer">
                     <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
                     <button className="btn btn-primary submit" type="submit" disabled={initial <= 0 || stock === 0} onClick={() => onConfirm(initial)}>Comprar</button>
                 </div>

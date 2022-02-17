@@ -9,13 +9,13 @@ const ItemList = () => {
 
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        const getInfo = new Promise ((resolve, reject) => {
-            setTimeout(() => {
-                resolve(itemsForPromise);
-            }, 2000);
-        });
+    const getInfo = new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            resolve(itemsForPromise);
+        }, 2000);
+    });
 
+    useEffect(() => {
         getInfo
             .then((response) => {
                 setItems(response);
