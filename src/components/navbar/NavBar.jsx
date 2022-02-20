@@ -4,13 +4,17 @@ import './NavBar.css';
 import CommonItem from '../navbar-common-item/CommonItem';
 import DropdownItem from '../navbar-dropdown-item/DropdownItem';
 import CartWidget from '../cart-widget/CartWidget';
+import { Link } from 'react-router-dom';
+
 
 const NavBar= () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <img src={logo} className="logo" alt="logo" />
+                    <Link to={'/'}>
+                        <img src={logo} className="logo" alt="logo" />
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>

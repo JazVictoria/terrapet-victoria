@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './ItemDetailContainer.css';
 import ItemDetail from '../item-detail/ItemDetail';
+import MockInfo from '../../mocks';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
-
-    const itemForPromise = {id: 1, title: 'Hueso antiestres', description: 'Hueso masticable para ayudar a quitar el estres', stock: 5, price: 100, pictureUrl: 'https://sc02.alicdn.com/kf/Hd510c222b8944ec1b66bcebde98328a41/239423207/Hd510c222b8944ec1b66bcebde98328a41.jpg_.webp'};
-
     const [itemInfo, setItemInfo] = useState(null)
+    const { id } = useParams();
 
     const getItem = new Promise ((resolve, reject) => {
+        const item = MockInfo.find(a => a.id == id);
+        console.log(item)
         setTimeout(() => {
-            resolve(itemForPromise);
+            resolve(item);
         }, 2000);
     });
 
@@ -22,7 +24,7 @@ const ItemDetailContainer = () => {
             .catch((error) => {
                 console.log('Ocurrio un error: ', error);
             });
-    }, [])
+    }, [id])
 
     return (
         <div className="ItemDetailContainer">

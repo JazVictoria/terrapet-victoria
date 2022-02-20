@@ -6,3 +6,12 @@
 .card-img-top {
     height: 10rem;
 }
+
+.item {
+    text-decoration: none;
+    color: black;
+}
+
+.item:hover {
+    color: black;
+}

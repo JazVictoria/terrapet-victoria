@@ -2,7 +2,6 @@ import React from 'react';
 import './CartWidget.css';
 import cart from '../../images/cart.svg';
 
-
 const CartWidget = () => {
     return (
         <div className="cartContainer">

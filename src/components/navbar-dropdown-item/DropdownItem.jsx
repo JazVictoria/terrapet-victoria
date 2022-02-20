@@ -1,5 +1,6 @@
 import React from 'react';
 import './DropdownItem.css';
+import { Link } from 'react-router-dom';
 
 const DropdownItem = ({ itemName, dropItems }) => {
     return (
@@ -9,7 +10,7 @@ const DropdownItem = ({ itemName, dropItems }) => {
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               {dropItems.map(item => {
-                  return (<li><a className="dropdown-item" href="#">{item}</a></li>)
+                  return (<li><Link to={`/category/${item}`} className="dropdown-item">{item}</Link></li>)
               })}  
             </ul>
         </li>
