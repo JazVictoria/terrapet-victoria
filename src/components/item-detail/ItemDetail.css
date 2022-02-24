@@ -1,4 +1,7 @@
 .ItemDetail {
     max-width: 540px;
-    
+}
+
+.ItemDetail .submit {
+    margin-top: 0;
 }

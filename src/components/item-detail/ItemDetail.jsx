@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ItemDetail.css';
+import ItemCount from '../item-count/ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ item }) => {
+    const [stock, setStock] = useState(item.stock);
+    const [readyToFinish, setReady] = useState(false);
+
+    const onConfirm = (value) => {
+        setStock(stock - value);
+        setReady(true);
+    }
+
     return (
         <div className="card mb-3 ItemDetail">
             <div className="row g-0">
@@ -13,7 +23,19 @@ const ItemDetail = ({ item }) => {
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">{item.description}</p>
                         <h5 className="card-text">${item.price}</h5>
-                        <p className="card-text"><small className="text-muted">Stock disponible: {item.stock}</small></p>
+                        <p className="card-text"><small className="text-muted">Stock disponible: {stock}</small></p>
+                    </div>
+                    <div>
+                        {
+                            !readyToFinish ?
+                            <ItemCount stock={stock} onConfirm={onConfirm} />
+                            :
+                            <div className="card-footer">
+                                <Link to={'/cart'}>
+                                    <button className="btn btn-primary submit" type="submit">Finalizar compra</button>
+                                </Link>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -5,15 +5,9 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ stockAmount, title, description, price, pictureUrl, id }) => {
     const [stock, setStock] = useState(stockAmount);
-    const [initial, setInitial] = useState(1);
-
-    const onAdd = (value) => {
-        setInitial(initial + value);
-    }
 
     const onConfirm = (value) => {
         setStock(stock - value);
-        setInitial(1);
     }
 
     return (
@@ -26,10 +20,7 @@ const Item = ({ stockAmount, title, description, price, pictureUrl, id }) => {
                     <p className="card-text">${price}</p>
                     <p className="card-text">Stock disponible: {stock}</p>
                 </Link>
-                <div className="card-footer">
-                    <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
-                    <button className="btn btn-primary submit" type="submit" disabled={initial <= 0 || stock === 0} onClick={() => onConfirm(initial)}>Comprar</button>
-                </div>
+                <ItemCount stock={stock} onConfirm={onConfirm} />
             </div>
         </div>
     )
