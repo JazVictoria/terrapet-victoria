@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
 
     const getItem = new Promise ((resolve, reject) => {
         const item = MockInfo.find(a => a.id == id);
-        console.log(item)
         setTimeout(() => {
             resolve(item);
         }, 2000);

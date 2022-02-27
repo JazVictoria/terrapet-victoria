@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './ItemDetail.css';
 import ItemCount from '../item-count/ItemCount';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
     const [stock, setStock] = useState(item.stock);
     const [readyToFinish, setReady] = useState(false);
+    const { updateCart } = useContext(CartContext)
 
     const onConfirm = (value) => {
+        updateCart(item.id, item.title, item.price, value);
         setStock(stock - value);
         setReady(true);
     }
