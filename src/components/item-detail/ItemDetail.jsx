@@ -35,7 +35,7 @@ const ItemDetail = ({ item }) => {
                             :
                             <div className="card-footer">
                                 <Link to={'/cart'}>
-                                    <button className="btn btn-primary submit" type="submit">Finalizar compra</button>
+                                    <button className="btn btn-primary submit" type="submit">Terminar mi compra</button>
                                 </Link>
                             </div>
                         }

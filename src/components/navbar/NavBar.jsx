@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../images/logo.svg';
 import './NavBar.css';
 import CommonItem from '../navbar-common-item/CommonItem';
 import DropdownItem from '../navbar-dropdown-item/DropdownItem';
 import CartWidget from '../cart-widget/CartWidget';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 
 const NavBar= () => {
+    const { cart } = useContext(CartContext);
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,7 +32,7 @@ const NavBar= () => {
                         <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
                         <button className="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
-                    <CartWidget />
+                    {(cart && cart.length > 0) && <CartWidget />}
                     </div>
                 </div>
             </nav>
