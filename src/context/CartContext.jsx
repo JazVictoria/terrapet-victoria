@@ -23,7 +23,7 @@ const CartProvider = ({children}) => {
     }
 
     const removeProductFromCart = (id) => {
-        const index = cart.findIndex(item => item.id === id);
+        const index = cart.findIndex(item => item.productId === id);
         let newCart = [...cart];
         newCart.splice(index, 1);
         setCart(newCart);

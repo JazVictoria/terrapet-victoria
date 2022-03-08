@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
 import './ItemDetailContainer.css';
 import ItemDetail from '../item-detail/ItemDetail';
-import MockInfo from '../../mocks';
 import { useParams } from 'react-router-dom';
+import db from "../../firebase";
 
 const ItemDetailContainer = () => {
     const [itemInfo, setItemInfo] = useState(null)
     const { id } = useParams();
 
-    const getItem = new Promise ((resolve, reject) => {
-        const item = MockInfo.find(a => a.id == id);
-        setTimeout(() => {
-            resolve(item);
-        }, 2000);
-    });
+    const getItem = async () => {
+        try {
+            const item = doc(db, "items", id);
+            const itemDetail = await getDoc(item);
+            setItemInfo({...itemDetail.data()});
+        } catch (error) {
+            console.log('Ocurrio un error: ', error);
+        }
+    };
 
     useEffect(() => {
-        getItem
-            .then((response) => {
-                setItemInfo(response);
-            })
-            .catch((error) => {
-                console.log('Ocurrio un error: ', error);
-            });
+        getItem();
     }, [id])
 
     return (

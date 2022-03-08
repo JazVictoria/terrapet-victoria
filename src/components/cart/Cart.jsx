@@ -19,7 +19,7 @@ const Cart = () => {
                                     <p>{`Precio: $${item.price}`}</p>
                                     <p>{`Cantidad: ${item.quantity}`}</p>
                                     <p>{`Subtotal: ${(item.quantity * item.price)}`}</p>
-                                    <img src={trash} className="trash" alt="trash icon" onClick={() => removeProductFromCart(item.id)} />
+                                    <img src={trash} className="trash" alt="trash icon" onClick={() => removeProductFromCart(item.productId)} />
                                 </li>
                             );
                         })}
