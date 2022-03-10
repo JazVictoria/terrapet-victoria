@@ -4,12 +4,12 @@ import ItemCount from '../item-count/ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
-const Item = ({ stockAmount, title, description, price, pictureUrl, id, productId }) => {
+const Item = ({ stockAmount, title, description, price, pictureUrl, id }) => {
     const [stock, setStock] = useState(stockAmount);
     const { updateCart } = useContext(CartContext);
 
     const onConfirm = (value) => {
-        updateCart(productId, title, price, value);
+        updateCart(id, title, price, value);
         setStock(stock - value);
     }
 

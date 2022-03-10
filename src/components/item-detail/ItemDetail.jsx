@@ -10,7 +10,7 @@ const ItemDetail = ({ item }) => {
     const { updateCart } = useContext(CartContext)
 
     const onConfirm = (value) => {
-        updateCart(item.productId, item.title, item.price, value);
+        updateCart(item.id, item.title, item.price, value);
         setStock(stock - value);
         setReady(true);
     }

@@ -23,7 +23,7 @@ const CartProvider = ({children}) => {
     }
 
     const removeProductFromCart = (id) => {
-        const index = cart.findIndex(item => item.productId === id);
+        const index = cart.findIndex(item => item.id === id);
         let newCart = [...cart];
         newCart.splice(index, 1);
         setCart(newCart);
@@ -40,12 +40,16 @@ const CartProvider = ({children}) => {
         }
     }
 
+    const resetCart = () => {
+        setCart([]);
+    }
+
     useEffect(() => {
         updateProductQuantity();
     }, [cart])
 
     return (
-        <CartContext.Provider value={{ cart, updateCart, productQuantity, totalPrice, removeProductFromCart }}>
+        <CartContext.Provider value={{ cart, updateCart, productQuantity, totalPrice, removeProductFromCart, resetCart }}>
             {children}            
         </CartContext.Provider>
     )

@@ -27,7 +27,7 @@ const ItemList = () => {
     return (
         <div className='row row-cols-1 row-cols-md-4 g-4'>
             {(items && items.length > 0) &&
-                items.map(item => <Item key={item.productId} productId={item.productId} id={item.id} stockAmount={item.stock} title={item.title} description={item.description} price={item.price} pictureUrl={item.pictureUrl} />)
+                items.map(item => <Item key={item.id} id={item.id} stockAmount={item.stock} title={item.title} description={item.description} price={item.price} pictureUrl={item.pictureUrl} />)
             }
         </div>
     )

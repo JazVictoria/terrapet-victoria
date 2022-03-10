@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
         try {
             const item = doc(db, "items", id);
             const itemDetail = await getDoc(item);
-            setItemInfo({...itemDetail.data()});
+            setItemInfo({id: id, ...itemDetail.data()});
         } catch (error) {
             console.log('Ocurrio un error: ', error);
         }
