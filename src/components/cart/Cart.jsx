@@ -31,7 +31,8 @@ const Cart = () => {
         });
     }
 
-    const onSubmitBuy = async () => {
+    const onSubmitBuy = async (e) => {
+        e.preventDefault();
         try {
             const orders = collection(db, "orders");
             const order = await addDoc(orders, form);
@@ -87,7 +88,7 @@ const Cart = () => {
                                 <input type="email" className="form-control" id="mail" value={form.buyer.mail} required onChange={handleInputChange} />
                             </div>                    
                             <div className="col-12">
-                                <button onClick={() => onSubmitBuy()} disabled={form.buyer.name === '' || form.buyer.phone === '' || form.buyer.mail === ''} className="btn btn-primary" type="submit">Finalizar compra</button>
+                                <button onClick={onSubmitBuy} disabled={form.buyer.name === '' || form.buyer.phone === '' || form.buyer.mail === ''} className="btn btn-primary" type="submit">Finalizar compra</button>
                             </div>
                         </form>
                     </div>
@@ -99,10 +100,10 @@ const Cart = () => {
                             <button className="btn btn-primary" onClick={() => resetCart()}>Volver al inicio</button>
                         </Link>
                     </div>
-                )
-            :
+                ) 
+                :
                 <div>
-                    <h1>Tu carrito esta vacio :(</h1>
+                <h1>Tu carrito esta vacio :(</h1>
                     <Link to={'/'}>
                         <button className="btn btn-primary">Ver productos</button>
                     </Link>
