@@ -1,0 +1,10 @@
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.total{
+    font-weight: bold;
+    font-size: calc(1.3rem + .6vw);
+}

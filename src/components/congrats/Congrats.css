@@ -1,0 +1,15 @@
+.congrats {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check-img {
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.order {
+    margin-bottom: 75px;
+}
