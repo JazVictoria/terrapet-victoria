@@ -1,3 +1,16 @@
+# Sobre el proyecto
+
+Este proyecto trata de un e-commerce de productos veterinarios.
+
+El mismo está desarrollado utilizando:
+    - React Js (17.0.2) para realizar la estructura de componentes que conforman el sitio.
+    - Se utiliza react-router-dom (6.2.1) para el armado del árbol de navegación del sitio.
+    - Se implementaron react hooks para construir componentes más claros, entendibles y livianos.
+    - Se conecta con una base de datos implementada con Firebase de Google (9.6.8), permitiendo obtener y generar información de forma dinámica.
+    - Se implementa el uso de react context para facilitar el acceso a información o funciones de uso compartido por diversas páginas y componentes del sitio, mediante un contexto de conocimiento general.
+    - Para el estilizado del proyecto, se utiliza css convencional, así como Bootstrap (5.1.3) linkeado en el index del proyecto.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
